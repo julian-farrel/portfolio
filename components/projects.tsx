@@ -7,18 +7,18 @@ const projects = [
   {
     title: "DeFi Yield Farming Protocol",
     description: "Automated yield farming protocol with smart contract optimization and multi-token staking",
-    tech: ["Solidity", "Hardhat", "React", "Web3.js", "OpenZeppelin"],
+    tech: ["Solidity", "React", "MySQL", "Web3.js", "Java"],
     image: "/defi-protocol-dashboard.jpg",
     category: "blockchain",
-    metrics: { tvl: "$2.5M", apy: "12.5%", users: "1.2K" },
+    metrics: { tvl: "$0M", apy: "0%", users: "0K" },
   },
   {
-    title: "NFT Marketplace dApp",
+    title: "IDX DEX Trading Platform",
     description: "Full-featured NFT marketplace with lazy minting, royalties, and IPFS integration",
     tech: ["Solidity", "Next.js", "IPFS", "Ethers.js", "Tailwind CSS"],
     image: "/nft-marketplace-interface.jpg",
     category: "blockchain",
-    metrics: { volume: "450 ETH", collections: "120", sales: "2.8K" },
+    metrics: { volume: "$0B", collections: "120", sales: "2.8K" },
   },
   {
     title: "Cross-Chain Bridge",

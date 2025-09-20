@@ -1,0 +1,11 @@
+.liquid-ether-container {
+  position: absolute;
+  overflow: hidden;
+  width: 100vw;
+  height: 100vh;
+  touch-action: none;
+  top: 0;
+  left: 0;
+  margin: 0 auto;
+  transform: translate(-27%, 0%);
+}

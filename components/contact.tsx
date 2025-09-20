@@ -24,16 +24,16 @@ export function Contact() {
 
               <div className="space-y-4">
                 <a
-                  href="mailto:hello@yourportfolio.com"
+                  href="mailto:julianfarrel05@gmail.com"
                   className="flex items-center gap-3 text-muted-foreground hover:text-accent transition-colors"
                 >
                   <Mail className="w-5 h-5" />
-                  hello@yourportfolio.com
+                  julianfarrel05@gmail.com
                 </a>
 
                 <div className="flex gap-4 pt-4">
                   <a
-                    href="https://github.com"
+                    href="https://github.com/julian-farrel"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="p-2 bg-secondary hover:bg-accent hover:text-accent-foreground rounded-lg transition-colors"
@@ -41,7 +41,7 @@ export function Contact() {
                     <Github className="w-5 h-5" />
                   </a>
                   <a
-                    href="https://linkedin.com"
+                    href="https://www.linkedin.com/in/julianfarrel/"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="p-2 bg-secondary hover:bg-accent hover:text-accent-foreground rounded-lg transition-colors"
