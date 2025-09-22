@@ -106,3 +106,11 @@
 ::-webkit-scrollbar-thumb:hover {
   background: oklch(0.6 0.25 300);
 }
+
+.grow-text{
+  transition: transform 0.3s ease-in-out;
+}
+
+.grow-text:hover{
+  transform: scale(1.1);
+}

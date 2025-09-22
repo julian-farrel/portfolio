@@ -4,6 +4,7 @@ import { About } from "@/components/about"
 import { Projects } from "@/components/projects"
 import { BlockchainStats } from "@/components/blockchain-stats"
 import { Contact } from "@/components/contact"
+import { Footer } from "@/components/footer"
 
 export default function Home() {
   return (
@@ -11,9 +12,10 @@ export default function Home() {
       <Header />
       <Hero />
       <About />
-      <BlockchainStats />
+      {/* <BlockchainStats /> */}
       <Projects />
       <Contact />
+      <Footer/>
     </main>
   )
 }

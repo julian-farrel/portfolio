@@ -22,12 +22,12 @@ export function About() {
             <h2 className="text-3xl md:text-4xl font-bold mb-6">About Me</h2>
             <div className="space-y-4 text-muted-foreground leading-relaxed">
               <p>
-                I'm a blockchain developer and full-stack engineer passionate about building the decentralized future.
+                I'm a blockchain developer passionate about building the decentralized future.
                 With deep expertise in smart contracts, DeFi protocols, and Web3 technologies, I create secure and
                 innovative blockchain solutions.
               </p>
               <p>
-                From developing custom DeFi protocols to building user-friendly dApps, I bridge the gap between complex
+                Currently developing custom DeFi protocols to building user-friendly dApps, I bridge the gap between complex
                 blockchain technology and seamless user experiences. My work spans across Ethereum, Layer 2 solutions,
                 and emerging blockchain ecosystems.
               </p>
@@ -40,7 +40,7 @@ export function About() {
 
           <div className="space-y-6">
             <div>
-              <h3 className="text-lg font-semibold mb-3 text-accent">Blockchain Expertise</h3>
+              <h3 className="text-lg font-semibold mb-3 text-accent">Expertise</h3>
               <div className="space-y-3">
                 {blockchainSkills.map((skill) => (
                   <div

@@ -1,8 +1,10 @@
 "use client"
 
 import LiquidEther from './LiquidEther'; // Adjust the import path if needed
+// import { useTypewriter, Cursor } from 'react-simple-typewriter';
 
 export function Hero() {
+  // Setup the typewriter hook
   return (
     // 1. Make the section a "relative" positioning container
     <section className="min-h-screen flex items-center justify-center px-6 relative bg-black overflow-hidden">
@@ -17,7 +19,7 @@ export function Hero() {
           cursorSize={100}
         />
         <div className="space-y-6 z-11 absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
-          <h1 className="text-5xl md:text-7xl font-bold text-balance text-white">
+          <h1 className="grow-text text-5xl md:text-7xl font-bold text-balance text-white">
             Julian <span className="text-accent">Farrel</span>
           </h1>
 

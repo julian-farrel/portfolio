@@ -4,14 +4,14 @@ import { Card, CardContent } from "@/components/ui/card"
 import { useState } from "react"
 
 const projects = [
-  {
-    title: "DeFi Yield Farming Protocol",
-    description: "Automated yield farming protocol with smart contract optimization and multi-token staking",
-    tech: ["Solidity", "React", "MySQL", "Web3.js", "Java"],
-    image: "/defi-protocol-dashboard.jpg",
-    category: "blockchain",
-    metrics: { tvl: "$0M", apy: "0%", users: "0K" },
-  },
+  // {
+  //   title: "DeFi Yield Farming Protocol",
+  //   description: "Automated yield farming protocol with smart contract optimization and multi-token staking",
+  //   tech: ["Solidity", "React", "MySQL", "Web3.js", "Java"],
+  //   image: "/defi-protocol-dashboard.jpg",
+  //   category: "blockchain",
+  //   metrics: { tvl: "$0M", apy: "0%", users: "0K" },
+  // },
   {
     title: "IDX DEX Trading Platform",
     description: "Full-featured NFT marketplace with lazy minting, royalties, and IPFS integration",
@@ -20,22 +20,22 @@ const projects = [
     category: "blockchain",
     metrics: { volume: "$0B", collections: "120", sales: "2.8K" },
   },
-  {
-    title: "Cross-Chain Bridge",
-    description: "Secure asset bridge between Ethereum and Polygon with automated liquidity management",
-    tech: ["Solidity", "Chainlink", "Node.js", "PostgreSQL"],
-    image: "/cross-chain-bridge.jpg",
-    category: "blockchain",
-    metrics: { bridged: "$8.2M", chains: "3", uptime: "99.9%" },
-  },
-  {
-    title: "DAO Governance Platform",
-    description: "Decentralized governance system with proposal voting, treasury management, and delegation",
-    tech: ["Solidity", "React", "The Graph", "IPFS"],
-    image: "/dao-governance-platform.jpg",
-    category: "blockchain",
-    metrics: { proposals: "45", voters: "890", treasury: "$1.8M" },
-  },
+  // {
+  //   title: "Cross-Chain Bridge",
+  //   description: "Secure asset bridge between Ethereum and Polygon with automated liquidity management",
+  //   tech: ["Solidity", "Chainlink", "Node.js", "PostgreSQL"],
+  //   image: "/cross-chain-bridge.jpg",
+  //   category: "blockchain",
+  //   metrics: { bridged: "$8.2M", chains: "3", uptime: "99.9%" },
+  // },
+  // {
+  //   title: "DAO Governance Platform",
+  //   description: "Decentralized governance system with proposal voting, treasury management, and delegation",
+  //   tech: ["Solidity", "React", "The Graph", "IPFS"],
+  //   image: "/dao-governance-platform.jpg",
+  //   category: "blockchain",
+  //   metrics: { proposals: "45", voters: "890", treasury: "$1.8M" },
+  // },
 ]
 
 export function Projects() {
@@ -45,7 +45,7 @@ export function Projects() {
     <section id="projects" className="py-20 px-6 bg-secondary/20">
       <div className="container mx-auto max-w-6xl">
         <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">Blockchain Projects</h2>
+          <h2 className="text-3xl md:text-4xl font-bold mb-4">My Projects</h2>
           <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
             Innovative Web3 solutions and DeFi protocols that push the boundaries of decentralized technology
           </p>
