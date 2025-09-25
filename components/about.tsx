@@ -6,12 +6,11 @@ export function About() {
   const [activeSkill, setActiveSkill] = useState<string | null>(null)
 
   const blockchainSkills = [
-    { name: "Solidity", level: 90, description: "Smart contract development and optimization" },
-    { name: "Web3.js", level: 85, description: "Blockchain integration and dApp development" },
-    { name: "Ethereum", level: 88, description: "DeFi protocols and token standards" },
-    { name: "IPFS", level: 75, description: "Decentralized storage solutions" },
-    { name: "Hardhat", level: 82, description: "Smart contract testing and deployment" },
-    { name: "DeFi", level: 80, description: "Decentralized finance protocol development" },
+    { name: "Figma", level: 90, description: "Smart contract development and optimization" },
+    { name: "Solidity", level: 65, description: "Blockchain integration and dApp development" },
+    { name: "JavaScript", level: 60, description: "DeFi protocols and token standards" },
+    { name: "Java", level: 85, description: "Decentralized storage solutions" },
+    { name: "Microsoft SQL", level: 75, description: "Smart contract testing and deployment" },
   ]
 
   return (
@@ -22,18 +21,16 @@ export function About() {
             <h2 className="text-3xl md:text-4xl font-bold mb-6">About Me</h2>
             <div className="space-y-4 text-muted-foreground leading-relaxed">
               <p>
-                I'm a blockchain developer passionate about building the decentralized future.
-                With deep expertise in smart contracts, DeFi protocols, and Web3 technologies, I create secure and
-                innovative blockchain solutions.
+                I am an Information Systems undergraduate minoring in Blockchain Technology. 
+                Passionate in learning and building Web3.
               </p>
               <p>
-                Currently developing custom DeFi protocols to building user-friendly dApps, I bridge the gap between complex
-                blockchain technology and seamless user experiences. My work spans across Ethereum, Layer 2 solutions,
-                and emerging blockchain ecosystems.
+                Currently developing blockchain infrastructure in the healthcare industry to build a distributed
+                and decentralized patient medical record.
               </p>
               <p>
-                When I'm not coding smart contracts, you'll find me researching the latest in blockchain technology,
-                contributing to open source Web3 projects, or sharing insights about decentralized systems.
+                When I am building, you'll find me front running the latest in blockchain technology,
+                learning and upgrading my skills.
               </p>
             </div>
           </div>
@@ -72,7 +69,7 @@ export function About() {
             <div>
               <h3 className="text-lg font-semibold mb-3 text-accent">Technologies</h3>
               <div className="flex flex-wrap gap-2">
-                {["Solidity", "React", "Next.js", "TypeScript", "Web3.js", "Hardhat", "Node.js", "Python"].map(
+                {["Figma", "Solidity", "JavaScript", "Java", "Microsoft SQL"].map(
                   (tech) => (
                     <span
                       key={tech}

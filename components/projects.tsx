@@ -13,21 +13,21 @@ const projects = [
   //   metrics: { tvl: "$0M", apy: "0%", users: "0K" },
   // },
   {
-    title: "IDX DEX Trading Platform",
-    description: "Full-featured NFT marketplace with lazy minting, royalties, and IPFS integration",
-    tech: ["Solidity", "Next.js", "IPFS", "Ethers.js", "Tailwind CSS"],
-    image: "/nft-marketplace-interface.jpg",
+    title: "ParkHere",
+    description: "Prototype for a Smart Parking System application ",
+    tech: ["Figma"],
+    // image: "/nft-marketplace-interface.jpg",
     category: "blockchain",
-    metrics: { volume: "$0B", collections: "120", sales: "2.8K" },
+    // metrics: { volume: "$0B", collections: "120", sales: "2.8K" },
   },
-  // {
-  //   title: "Cross-Chain Bridge",
-  //   description: "Secure asset bridge between Ethereum and Polygon with automated liquidity management",
-  //   tech: ["Solidity", "Chainlink", "Node.js", "PostgreSQL"],
-  //   image: "/cross-chain-bridge.jpg",
-  //   category: "blockchain",
-  //   metrics: { bridged: "$8.2M", chains: "3", uptime: "99.9%" },
-  // },
+  {
+    title: "Ronald Medical",
+    description: "Infrastucture for a blockchain healthcare industry focusing in decentralized medical record.",
+    tech: ["Solidity", "Chainlink", "Node.js", "PostgreSQL"],
+    // image: "/cross-chain-bridge.jpg",
+    category: "blockchain",
+    // metrics: { bridged: "$8.2M", chains: "3", uptime: "99.9%" },
+  },
   // {
   //   title: "DAO Governance Platform",
   //   description: "Decentralized governance system with proposal voting, treasury management, and delegation",
@@ -47,7 +47,7 @@ export function Projects() {
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-bold mb-4">My Projects</h2>
           <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-            Innovative Web3 solutions and DeFi protocols that push the boundaries of decentralized technology
+            Innovative Web3 solutions & applications to solve real world problems
           </p>
         </div>
 
@@ -70,12 +70,12 @@ export function Projects() {
                     <div className="absolute inset-0 bg-black/80 flex items-center justify-center transition-opacity duration-300">
                       <div className="text-center text-white">
                         <div className="grid grid-cols-3 gap-4">
-                          {Object.entries(project.metrics).map(([key, value]) => (
+                          {/* {Object.entries(project.metrics).map(([key, value]) => (
                             <div key={key} className="text-center">
                               <div className="text-lg font-bold text-accent">{value}</div>
                               <div className="text-xs uppercase tracking-wide">{key}</div>
                             </div>
-                          ))}
+                          ))} */}
                         </div>
                       </div>
                     </div>

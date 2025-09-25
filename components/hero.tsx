@@ -24,7 +24,7 @@ export function Hero() {
           </h1>
 
           <p className="text-xl md:text-2xl text-gray-300 max-w-2xl mx-auto text-balance">
-            Blockchain and Crypto Enthusiast. Learning and Building.
+            Learning and Building.
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center pt-8">
@@ -35,7 +35,7 @@ export function Hero() {
               View My Work
             </button>
             <a
-              href="https://drive.google.com/uc?export=download&id=YOUR_FILE_ID"
+              href="https://drive.google.com/file/d/1SU3fiTkRA-t6HlPjmItZxnWUU0307AVN/view?usp=sharing"
               target="_blank"
               rel="noopener noreferrer"
               className="border border-gray-600 hover:border-accent text-white px-8 py-3 rounded-lg font-medium transition-colors inline-block"
