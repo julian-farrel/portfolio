@@ -6,11 +6,11 @@ export function About() {
   const [activeSkill, setActiveSkill] = useState<string | null>(null)
 
   const blockchainSkills = [
-    { name: "Figma", level: 90, description: "Smart contract development and optimization" },
-    { name: "Solidity", level: 65, description: "Blockchain integration and dApp development" },
-    { name: "JavaScript", level: 60, description: "DeFi protocols and token standards" },
-    { name: "Java", level: 85, description: "Decentralized storage solutions" },
-    { name: "Microsoft SQL", level: 75, description: "Smart contract testing and deployment" },
+    { name: "Figma", level: 90},
+    { name: "Solidity", level: 65},
+    { name: "JavaScript", level: 60},
+    { name: "Java", level: 80},
+    { name: "Microsoft SQL", level: 65},
   ]
 
   return (
@@ -56,11 +56,11 @@ export function About() {
                         style={{ width: `${skill.level}%` }}
                       />
                     </div>
-                    {activeSkill === skill.name && (
+                    {/* {activeSkill === skill.name && (
                       <div className="absolute top-full left-0 mt-2 p-2 bg-card border border-border rounded-md shadow-lg z-10 text-xs">
                         {skill.description}
                       </div>
-                    )}
+                    )} */}
                   </div>
                 ))}
               </div>
@@ -69,7 +69,7 @@ export function About() {
             <div>
               <h3 className="text-lg font-semibold mb-3 text-accent">Technologies</h3>
               <div className="flex flex-wrap gap-2">
-                {["Figma", "Solidity", "JavaScript", "Java", "Microsoft SQL"].map(
+                {["Figma", "Visual Studio Code", "Remix", "Eclipse", "Microsoft SQL Server Management", "phpMyAdmin"].map(
                   (tech) => (
                     <span
                       key={tech}
@@ -86,9 +86,9 @@ export function About() {
               <h3 className="text-lg font-semibold mb-3 text-accent">Focus Areas</h3>
               <ul className="space-y-2 text-muted-foreground">
                 <li>• Smart contract development & auditing</li>
-                <li>• DeFi protocol architecture</li>
-                <li>• Web3 dApp development</li>
+                <li>• User Friendly Design & Flawless User Experience</li>
                 <li>• Blockchain integration & optimization</li>
+                {/* <li>• X </li> */}
               </ul>
             </div>
           </div>

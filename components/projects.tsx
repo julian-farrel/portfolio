@@ -14,10 +14,11 @@ const projects = [
   // },
   {
     title: "ParkHere",
-    description: "Prototype for a Smart Parking System application ",
+    description: "Prototype for a Smart Parking System application made to solve inefficiency in parking spot searching.",
     tech: ["Figma"],
-    // image: "/nft-marketplace-interface.jpg",
+    image: "parkhere banner 512h.png",
     category: "blockchain",
+    href: "https://www.figma.com/design/M1vMWZzEZNn6pibfpzoRXi/Parkhere?node-id=0-1&t=aTC7NiEmI2hKcNd8-1"
     // metrics: { volume: "$0B", collections: "120", sales: "2.8K" },
   },
   {
@@ -53,50 +54,50 @@ export function Projects() {
 
         <div className="grid md:grid-cols-2 gap-8">
           {projects.map((project, index) => (
-            <Card
+            <a
               key={index}
-              className="group hover:scale-105 transition-all duration-300 bg-card border-border hover:border-accent/50"
-              onMouseEnter={() => setHoveredProject(index)}
-              onMouseLeave={() => setHoveredProject(null)}
+              href={project.href}
+              target="_blank" // Opens the link in a new tab
+              rel="noopener noreferrer" // Security best practice for target="_blank"
             >
-              <CardContent className="p-0">
-                <div className="aspect-video overflow-hidden rounded-t-lg relative">
-                  <img
-                    src={project.image || "/placeholder.svg?height=300&width=500&query=blockchain+dashboard+interface"}
-                    alt={project.title}
-                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
-                  />
-                  {hoveredProject === index && (
-                    <div className="absolute inset-0 bg-black/80 flex items-center justify-center transition-opacity duration-300">
-                      <div className="text-center text-white">
-                        <div className="grid grid-cols-3 gap-4">
-                          {/* {Object.entries(project.metrics).map(([key, value]) => (
-                            <div key={key} className="text-center">
-                              <div className="text-lg font-bold text-accent">{value}</div>
-                              <div className="text-xs uppercase tracking-wide">{key}</div>
-                            </div>
-                          ))} */}
+              <Card
+                className="group hover:scale-105 transition-all duration-300 bg-card border-border hover:border-accent/50"
+                onMouseEnter={() => setHoveredProject(index)}
+                onMouseLeave={() => setHoveredProject(null)}
+              >
+                <CardContent className="p-0">
+                  <div className="aspect-video overflow-hidden rounded-t-lg relative">
+                    <img
+                      src={project.image || "/placeholder.svg?height=300&width=500&query=blockchain+dashboard+interface"}
+                      alt={project.title}
+                      className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
+                    />
+                    {hoveredProject === index && (
+                      <div className="absolute inset-0 bg-black/80 flex items-center justify-center transition-opacity duration-300">
+                        <div className="text-center text-white">
+                          <div className="grid grid-cols-3 gap-4">
+                          </div>
                         </div>
                       </div>
-                    </div>
-                  )}
-                </div>
-                <div className="p-6">
-                  <h3 className="text-xl font-semibold mb-2 text-foreground">{project.title}</h3>
-                  <p className="text-muted-foreground mb-4">{project.description}</p>
-                  <div className="flex flex-wrap gap-2">
-                    {project.tech.map((tech) => (
-                      <span
-                        key={tech}
-                        className="px-2 py-1 bg-accent/10 text-accent rounded text-sm hover:bg-accent hover:text-accent-foreground transition-colors"
-                      >
-                        {tech}
-                      </span>
-                    ))}
+                    )}
                   </div>
-                </div>
-              </CardContent>
-            </Card>
+                  <div className="p-6">
+                    <h3 className="text-xl font-semibold mb-2 text-foreground">{project.title}</h3>
+                    <p className="text-muted-foreground mb-4">{project.description}</p>
+                    <div className="flex flex-wrap gap-2">
+                      {project.tech.map((tech) => (
+                        <span
+                          key={tech}
+                          className="px-2 py-1 bg-accent/10 text-accent rounded text-sm hover:bg-accent hover:text-accent-foreground transition-colors"
+                        >
+                          {tech}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
+            </a>
           ))}
         </div>
       </div>
