@@ -39,7 +39,7 @@ export function Header() {
               onClick={() => scrollToSection("projects")}
               className="text-muted-foreground hover:text-accent transition-colors"
             >
-              Work
+              Projects
             </button>
             <button
               onClick={() => scrollToSection("contact")}

@@ -22,11 +22,12 @@ const projects = [
     // metrics: { volume: "$0B", collections: "120", sales: "2.8K" },
   },
   {
-    title: "Ronald Medical",
-    description: "Infrastucture for a blockchain healthcare industry focusing in decentralized medical record.",
-    tech: ["Solidity", "Chainlink", "Node.js", "PostgreSQL"],
+    title: "Arah",
+    description: "Decentralized Exchange to trade perpetuals on the IDX Composite and major crypto pairs with up to 100x leverage.",
+    tech: ["Solidity", "Chainlink", "Next.js", "TypeScript"],
     // image: "/cross-chain-bridge.jpg",
     category: "blockchain",
+    href: "https://arah.vercel.app/"
     // metrics: { bridged: "$8.2M", chains: "3", uptime: "99.9%" },
   },
   // {
