@@ -23,21 +23,22 @@ const projects = [
   },
   {
     title: "Arah",
-    description: "Decentralized Exchange to trade perpetuals on the IDX Composite and major crypto pairs with up to 100x leverage.",
-    tech: ["Solidity", "Chainlink", "Next.js", "TypeScript"],
+    description: "Trade tokenized perpetuals of the world's most popular stocks, amplified with up to 100x power.",
+    tech: ["Next.js", "TypeScript", "React"],
     // image: "/cross-chain-bridge.jpg",
     category: "blockchain",
     href: "https://arah.vercel.app/"
     // metrics: { bridged: "$8.2M", chains: "3", uptime: "99.9%" },
   },
-  // {
-  //   title: "DAO Governance Platform",
-  //   description: "Decentralized governance system with proposal voting, treasury management, and delegation",
-  //   tech: ["Solidity", "React", "The Graph", "IPFS"],
-  //   image: "/dao-governance-platform.jpg",
-  //   category: "blockchain",
-  //   metrics: { proposals: "45", voters: "890", treasury: "$1.8M" },
-  // },
+  {
+    title: "Specula",
+    description: "Blockchain Based Prediction Market. Predict, Forecast Decentralized",
+    tech: ["Next.js", "TypeScript", "React"],
+    // image: "/dao-governance-platform.jpg",
+    category: "blockchain",
+    href: "https://speculamarket.vercel.app/"
+    // metrics: { proposals: "45", voters: "890", treasury: "$1.8M" },
+  },
 ]
 
 export function Projects() {
