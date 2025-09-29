@@ -25,14 +25,14 @@ const projects = [
     title: "Arah",
     description: "Trade tokenized perpetuals of the world's most popular stocks, amplified with up to 100x power.",
     tech: ["Next.js", "TypeScript", "React"],
-    // image: "/cross-chain-bridge.jpg",
+    image: "/arah banner.png",
     category: "blockchain",
     href: "https://arah.vercel.app/"
     // metrics: { bridged: "$8.2M", chains: "3", uptime: "99.9%" },
   },
   {
     title: "Specula",
-    description: "Blockchain Based Prediction Market. Predict, Forecast Decentralized",
+    description: "Blockchain Based Prediction Market. Predict, Forecast Decentralized & Transparant",
     tech: ["Next.js", "TypeScript", "React"],
     // image: "/dao-governance-platform.jpg",
     category: "blockchain",
