@@ -6,11 +6,11 @@ export function About() {
   const [activeSkill, setActiveSkill] = useState<string | null>(null)
 
   const blockchainSkills = [
-    { name: "Figma", level: 90},
-    { name: "Solidity", level: 65},
-    { name: "JavaScript", level: 60},
-    { name: "Java", level: 80},
-    { name: "Microsoft SQL", level: 65},
+    { name: "Figma", level: 75},
+    { name: "Solidity", level: 15},
+    { name: "JavaScript", level: 40},
+    { name: "Java", level: 50},
+    { name: "Microsoft SQL", level: 35},
   ]
 
   return (
@@ -83,11 +83,11 @@ export function About() {
             </div>
 
             <div>
-              <h3 className="text-lg font-semibold mb-3 text-accent">Focus Areas</h3>
+              {/* <h3 className="text-lg font-semibold mb-3 text-accent">Focus Areas</h3> */}
               <ul className="space-y-2 text-muted-foreground">
-                <li>• Smart contract development & auditing</li>
+                {/* <li>• Smart contract development & auditing</li>
                 <li>• User Friendly Design & Flawless User Experience</li>
-                <li>• Blockchain integration & optimization</li>
+                <li>• Blockchain integration & optimization</li> */}
                 {/* <li>• X </li> */}
               </ul>
             </div>
