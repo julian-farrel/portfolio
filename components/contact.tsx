@@ -63,36 +63,7 @@ export function Contact() {
               </div>
             </CardContent>
           </Card>
-
-          {/* <Card className="bg-card border-border">
-            <CardContent className="p-8">
-              <h3 className="text-xl font-semibold mb-4 text-foreground">Quick Message</h3>
-              <form className="space-y-4">
-                <div>
-                  <input
-                    type="text"
-                    placeholder="Your Name"
-                    className="w-full px-4 py-3 bg-input border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-accent text-foreground placeholder:text-muted-foreground"
-                  />
-                </div>
-                <div>
-                  <input
-                    type="email"
-                    placeholder="Your Email"
-                    className="w-full px-4 py-3 bg-input border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-accent text-foreground placeholder:text-muted-foreground"
-                  />
-                </div>
-                <div>
-                  <textarea
-                    placeholder="Your Message"
-                    rows={4}
-                    className="w-full px-4 py-3 bg-input border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-accent text-foreground placeholder:text-muted-foreground resize-none"
-                  />
-                </div>
-                <Button className="w-full bg-accent hover:bg-accent/90 text-accent-foreground">Send Message</Button>
-              </form>
-            </CardContent>
-          </Card> */}
+          
         </div>
       </div>
     </section>

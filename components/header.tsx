@@ -30,12 +30,6 @@ export function Header() {
 
           <div className="hidden md:flex items-center gap-8">
             <button
-              onClick={() => scrollToSection("about")}
-              className="text-muted-foreground hover:text-accent transition-colors"
-            >
-              About
-            </button>
-            <button
               onClick={() => scrollToSection("projects")}
               className="text-muted-foreground hover:text-accent transition-colors"
             >

@@ -56,11 +56,6 @@ export function About() {
                         style={{ width: `${skill.level}%` }}
                       />
                     </div>
-                    {/* {activeSkill === skill.name && (
-                      <div className="absolute top-full left-0 mt-2 p-2 bg-card border border-border rounded-md shadow-lg z-10 text-xs">
-                        {skill.description}
-                      </div>
-                    )} */}
                   </div>
                 ))}
               </div>
@@ -83,12 +78,7 @@ export function About() {
             </div>
 
             <div>
-              {/* <h3 className="text-lg font-semibold mb-3 text-accent">Focus Areas</h3> */}
               <ul className="space-y-2 text-muted-foreground">
-                {/* <li>• Smart contract development & auditing</li>
-                <li>• User Friendly Design & Flawless User Experience</li>
-                <li>• Blockchain integration & optimization</li> */}
-                {/* <li>• X </li> */}
               </ul>
             </div>
           </div>

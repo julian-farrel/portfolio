@@ -1,6 +1,5 @@
 import { Header } from "@/components/header"
 import { Hero } from "@/components/hero"
-import { About } from "@/components/about"
 import { Projects } from "@/components/projects"
 import { BlockchainStats } from "@/components/blockchain-stats"
 import { Contact } from "@/components/contact"
@@ -11,8 +10,6 @@ export default function Home() {
     <main className="min-h-screen bg-background">
       <Header />
       <Hero />
-      <About />
-      {/* <BlockchainStats /> */}
       <Projects />
       <Contact />
       <Footer/>

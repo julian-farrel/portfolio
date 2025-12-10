@@ -1,19 +1,14 @@
 "use client"
 
-import LiquidEther from './LiquidEther'; // Adjust the import path if needed
-// import { useTypewriter, Cursor } from 'react-simple-typewriter';
+import LiquidEther from './LiquidEther';
 
 export function Hero() {
-  // Setup the typewriter hook
   return (
-    // 1. Make the section a "relative" positioning container
     <section className="min-h-screen flex items-center justify-center px-6 relative bg-black overflow-hidden">
   
-      {/* 3. Ensure your content has a higher z-index to stay on top */}
       <div className="container mx-auto max-w-4xl text-center z-10">
         <LiquidEther
           className="liquid-ether-container"
-          // You can keep your props here or adjust them as needed
           colors={[ '#5227FF', '#FF9FFC', '#B19EEF' ]}
           mouseForce={20}
           cursorSize={100}
