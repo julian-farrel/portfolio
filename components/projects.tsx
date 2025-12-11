@@ -17,8 +17,10 @@ import {
   DialogHeader,
   DialogTitle,
   DialogTrigger,
+  DialogClose, 
 } from "@/components/ui/dialog"
 import { cn } from "@/lib/utils"
+import { X } from "lucide-react"
 
 const projects = [
   {
@@ -27,10 +29,10 @@ const projects = [
     tech: ["Figma"],
     image: "/parkhere banner 512h.png",
     gallery: [
-      "/parkhere banner 512h.png",
-      "/parkhere banner 2x.png",
-      "/parkhere banner.png",
-      "/parkhere banner 0 5x.png"
+      "test.jpg",
+      "test.jpg",
+      "test.jpg",
+      "test.jpg"
     ],
     category: "Figma",
   },
@@ -155,30 +157,47 @@ export function Projects() {
                                 <ProjectCard project={project} index={index} setHoveredProject={setHoveredProject} />
                               </div>
                             </DialogTrigger>
-                            <DialogContent className="max-w-screen-2xl w-[95vw] h-[90vh] p-0 bg-transparent border-none shadow-none flex flex-col justify-center outline-none">
+                            
+                            <DialogContent 
+                              showCloseButton={false} 
+                              // FIX: Added '!' (important) to these classes to override shadcn defaults strictly
+                              className="fixed !left-0 !top-0 !w-screen !h-screen !max-w-none !m-0 !p-0 !border-none bg-transparent !shadow-none !outline-none !translate-x-0 !translate-y-0 flex items-center justify-center"
+                            >
                               <DialogHeader className="sr-only">
                                 <DialogTitle>{project.title} Gallery</DialogTitle>
                                 <DialogDescription>UI Designs for {project.title}</DialogDescription>
                               </DialogHeader>
-                              <div className="relative w-full h-full flex items-center justify-center">
-                                {/* UPDATED: Carousel takes full width of the large dialog */}
-                                <Carousel className="w-full h-full" opts={{ loop: true }}>
-                                  <CarouselContent className="h-full">
+
+                              {/* EXIT BUTTON: Fixed to absolute top-right of SCREEN */}
+                              <DialogClose className="fixed top-4 right-4 z-[100] p-2 bg-black/50 hover:bg-white/20 border border-white/10 rounded-full text-white/80 hover:text-white transition-all backdrop-blur-sm">
+                                <X className="w-5 h-5" />
+                                <span className="sr-only">Close</span>
+                              </DialogClose>
+
+                              <div className="w-full h-full flex items-center justify-center p-4">
+                                <Carousel className="w-full h-full flex items-center justify-center" opts={{ loop: true }}>
+                                  <CarouselContent className="h-full ml-0">
                                     {project.gallery?.map((img, imgIndex) => (
-                                      <CarouselItem key={imgIndex} className="flex items-center justify-center h-full">
-                                        {/* UPDATED: Image container takes 80vh height */}
-                                        <div className="relative w-full h-[80vh] flex items-center justify-center p-2">
+                                      <CarouselItem key={imgIndex} className="h-full pl-0 flex items-center justify-center">
+                                        {/* IMAGE: Constrained width to ensure it doesn't overlap with the side buttons */}
+                                        <div className="relative flex items-center justify-center w-full h-full">
                                           <img
                                             src={img}
                                             alt={`${project.title} screenshot ${imgIndex + 1}`}
-                                            className="max-w-full max-h-full object-contain rounded-lg shadow-2xl"
+                                            className="max-w-[calc(100vw-150px)] max-h-[85vh] w-auto h-auto object-contain drop-shadow-2xl"
                                           />
                                         </div>
                                       </CarouselItem>
                                     ))}
                                   </CarouselContent>
-                                  <CarouselPrevious className="left-4 bg-background/50 hover:bg-background border-none h-12 w-12" />
-                                  <CarouselNext className="right-4 bg-background/50 hover:bg-background border-none h-12 w-12" />
+                                  
+                                  {/* NAV BUTTONS: Fixed to screen edges, size 12 */}
+                                  <CarouselPrevious 
+                                    className="fixed left-4 top-1/2 -translate-y-1/2 h-12 w-12 border-white/10 bg-black/50 hover:bg-white/20 text-white/80 hover:text-white backdrop-blur-md z-[60] border-none" 
+                                  />
+                                  <CarouselNext 
+                                    className="fixed right-4 top-1/2 -translate-y-1/2 h-12 w-12 border-white/10 bg-black/50 hover:bg-white/20 text-white/80 hover:text-white backdrop-blur-md z-[60] border-none" 
+                                  />
                                 </Carousel>
                               </div>
                             </DialogContent>
