@@ -47,8 +47,8 @@ const projects = [
   },
   {
     title: "Aegis",
-    description: "Our Medical Identity, Decentralized.",
-    tech: ["Solidity", "ERC-71","TypeScript", "React"],
+    description: "Verify Gold Instantly.",
+    tech: ["Solidity", "ERC-721","TypeScript", "React"],
     image: "",
     category: "Web3",
     href: "https://aegis-gold.vercel.app/"
