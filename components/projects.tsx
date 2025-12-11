@@ -10,6 +10,14 @@ import {
   CarouselPrevious,
   type CarouselApi,
 } from "@/components/ui/carousel"
+import {
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogHeader,
+  DialogTitle,
+  DialogTrigger,
+} from "@/components/ui/dialog"
 import { cn } from "@/lib/utils"
 
 const projects = [
@@ -17,9 +25,14 @@ const projects = [
     title: "ParkHere",
     description: "Prototype for a Smart Parking System application made to solve inefficiency in parking spot searching.",
     tech: ["Figma"],
-    image: "parkhere banner 512h.png",
+    image: "/parkhere banner 512h.png",
+    gallery: [
+      "/parkhere banner 512h.png",
+      "/parkhere banner 2x.png",
+      "/parkhere banner.png",
+      "/parkhere banner 0 5x.png"
+    ],
     category: "Figma",
-    href: "https://www.figma.com/design/M1vMWZzEZNn6pibfpzoRXi/Parkhere?node-id=0-1&t=aTC7NiEmI2hKcNd8-1"
   },
   {
     title: "Arah",
@@ -41,15 +54,15 @@ const projects = [
     title: "Vitalis",
     description: "Our Medical Identity, Decentralized.",
     tech: ["Solidity", "TypeScript", "React"],
-    image: "vitalis banner.png",
+    image: "/vitalis banner.png",
     category: "Web3",
     href: "https://vitalisrecord.vercel.app/"
   },
   {
     title: "Aegis",
     description: "Verify Gold Instantly.",
-    tech: ["Solidity", "ERC-721","TypeScript", "React"],
-    image: "aegis banner.png",
+    tech: ["Solidity", "ERC-721", "TypeScript", "React"],
+    image: "/aegis banner.png",
     category: "Web3",
     href: "https://aegis-gold.vercel.app/"
   },
@@ -64,22 +77,29 @@ export function Projects() {
   const [hoveredProject, setHoveredProject] = useState<number | null>(null)
   const [activeTab, setActiveTab] = useState("All")
 
-  const filteredProjects = projects.filter((project) => 
+  const filteredProjects = projects.filter((project) =>
     activeTab === "All" ? true : project.category === activeTab
   )
 
   useEffect(() => {
     if (!api) return
-    
-    setTimeout(() => {
+
+    const timer = setTimeout(() => {
       setCount(api.scrollSnapList().length)
       setCurrent(api.selectedScrollSnap())
       api.scrollTo(0)
     }, 10)
 
-    api.on("select", () => {
+    const onSelect = () => {
       setCurrent(api.selectedScrollSnap())
-    })
+    }
+
+    api.on("select", onSelect)
+
+    return () => {
+      clearTimeout(timer)
+      api.off("select", onSelect)
+    }
   }, [api, activeTab])
 
   useEffect(() => {
@@ -128,58 +148,56 @@ export function Projects() {
                   {filteredProjects.map((project, index) => (
                     <CarouselItem key={`${project.title}-${index}`}>
                       <div className="p-1 h-full">
-                        <a
-                          href={project.href}
-                          target="_blank" 
-                          rel="noopener noreferrer" 
-                          className="block h-full"
-                        >
-                          <Card
-                            className={cn(
-                              "group relative overflow-hidden transition-all duration-300 h-full border-border bg-card",
-                              "hover:border-accent hover:shadow-[0_0_30px_-5px_var(--color-accent)]", 
-                              "hover:-translate-y-1"
-                            )}
-                            onMouseEnter={() => setHoveredProject(index)}
-                            onMouseLeave={() => setHoveredProject(null)}
+                        {project.category === "Figma" ? (
+                          <Dialog>
+                            <DialogTrigger asChild>
+                              <div className="block h-full cursor-pointer">
+                                <ProjectCard project={project} index={index} setHoveredProject={setHoveredProject} />
+                              </div>
+                            </DialogTrigger>
+                            <DialogContent className="max-w-screen-2xl w-[95vw] h-[90vh] p-0 bg-transparent border-none shadow-none flex flex-col justify-center outline-none">
+                              <DialogHeader className="sr-only">
+                                <DialogTitle>{project.title} Gallery</DialogTitle>
+                                <DialogDescription>UI Designs for {project.title}</DialogDescription>
+                              </DialogHeader>
+                              <div className="relative w-full h-full flex items-center justify-center">
+                                {/* UPDATED: Carousel takes full width of the large dialog */}
+                                <Carousel className="w-full h-full" opts={{ loop: true }}>
+                                  <CarouselContent className="h-full">
+                                    {project.gallery?.map((img, imgIndex) => (
+                                      <CarouselItem key={imgIndex} className="flex items-center justify-center h-full">
+                                        {/* UPDATED: Image container takes 80vh height */}
+                                        <div className="relative w-full h-[80vh] flex items-center justify-center p-2">
+                                          <img
+                                            src={img}
+                                            alt={`${project.title} screenshot ${imgIndex + 1}`}
+                                            className="max-w-full max-h-full object-contain rounded-lg shadow-2xl"
+                                          />
+                                        </div>
+                                      </CarouselItem>
+                                    ))}
+                                  </CarouselContent>
+                                  <CarouselPrevious className="left-4 bg-background/50 hover:bg-background border-none h-12 w-12" />
+                                  <CarouselNext className="right-4 bg-background/50 hover:bg-background border-none h-12 w-12" />
+                                </Carousel>
+                              </div>
+                            </DialogContent>
+                          </Dialog>
+                        ) : (
+                          <a
+                            href={project.href}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="block h-full"
                           >
-                            <CardContent className="p-0 flex flex-col h-full">
-                              <div className="aspect-video overflow-hidden relative">
-                                <img
-                                  src={project.image || "/placeholder.svg?height=300&width=500&query=blockchain+dashboard+interface"}
-                                  alt={project.title}
-                                  className="w-full h-full object-cover transition-all duration-500 group-hover:brightness-110 group-hover:saturate-105"
-                                />
-                              </div>
-                              <div className="p-6 flex flex-col flex-grow relative z-20 bg-card border-t border-border/50">
-                                <div className="flex justify-between items-start mb-2">
-                                  <h3 className="text-2xl font-bold text-foreground group-hover:text-accent transition-colors duration-300">
-                                    {project.title}
-                                  </h3>
-                                  <span className="text-[10px] uppercase tracking-wider font-semibold bg-secondary px-2 py-1 rounded text-muted-foreground border border-border/50">
-                                    {project.category}
-                                  </span>
-                                </div>
-                                <p className="text-muted-foreground mb-6 flex-grow">{project.description}</p>
-                                <div className="flex flex-wrap gap-2 mt-auto">
-                                  {project.tech.map((tech) => (
-                                    <span
-                                      key={tech}
-                                      className="px-3 py-1 bg-secondary text-secondary-foreground rounded-full text-xs font-medium border border-transparent group-hover:border-accent/30 transition-colors"
-                                    >
-                                      {tech}
-                                    </span>
-                                  ))}
-                                </div>
-                              </div>
-                            </CardContent>
-                          </Card>
-                        </a>
+                            <ProjectCard project={project} index={index} setHoveredProject={setHoveredProject} />
+                          </a>
+                        )}
                       </div>
                     </CarouselItem>
                   ))}
                 </CarouselContent>
-                
+
                 <CarouselPrevious className="hidden md:flex -left-12 h-10 w-10 border border-muted-foreground/30 bg-background/80 hover:bg-accent hover:text-accent-foreground hover:border-accent transition-all duration-300 rounded-full" />
                 <CarouselNext className="hidden md:flex -right-12 h-10 w-10 border border-muted-foreground/30 bg-background/80 hover:bg-accent hover:text-accent-foreground hover:border-accent transition-all duration-300 rounded-full" />
               </Carousel>
@@ -191,8 +209,8 @@ export function Projects() {
                     onClick={() => api?.scrollTo(index)}
                     className={cn(
                       "h-2.5 rounded-full transition-all duration-500 focus:outline-none focus:ring-2 focus:ring-accent focus:ring-offset-2 focus:ring-offset-background",
-                      current === index 
-                        ? "w-8 bg-accent shadow-[0_0_10px_var(--color-accent)]" 
+                      current === index
+                        ? "w-8 bg-accent shadow-[0_0_10px_var(--color-accent)]"
                         : "w-2.5 bg-muted-foreground/30 hover:bg-muted-foreground/50"
                     )}
                     aria-label={`Go to slide ${index + 1}`}
@@ -209,5 +227,50 @@ export function Projects() {
         </div>
       </div>
     </section>
+  )
+}
+
+function ProjectCard({ project, index, setHoveredProject }: { project: any, index: number, setHoveredProject: (idx: number | null) => void }) {
+  return (
+    <Card
+      className={cn(
+        "group relative overflow-hidden transition-all duration-300 h-full border-border bg-card",
+        "hover:border-accent hover:shadow-[0_0_30px_-5px_var(--color-accent)]",
+        "hover:-translate-y-1"
+      )}
+      onMouseEnter={() => setHoveredProject(index)}
+      onMouseLeave={() => setHoveredProject(null)}
+    >
+      <CardContent className="p-0 flex flex-col h-full">
+        <div className="aspect-video overflow-hidden relative">
+          <img
+            src={project.image || "/placeholder.svg?height=300&width=500&query=blockchain+dashboard+interface"}
+            alt={project.title}
+            className="w-full h-full object-cover transition-all duration-500 group-hover:brightness-110 group-hover:saturate-105"
+          />
+        </div>
+        <div className="p-6 flex flex-col flex-grow relative z-20 bg-card border-t border-border/50">
+          <div className="flex justify-between items-start mb-2">
+            <h3 className="text-2xl font-bold text-foreground group-hover:text-accent transition-colors duration-300">
+              {project.title}
+            </h3>
+            <span className="text-[10px] uppercase tracking-wider font-semibold bg-secondary px-2 py-1 rounded text-muted-foreground border border-border/50">
+              {project.category}
+            </span>
+          </div>
+          <p className="text-muted-foreground mb-6 flex-grow">{project.description}</p>
+          <div className="flex flex-wrap gap-2 mt-auto">
+            {project.tech.map((tech: string) => (
+              <span
+                key={tech}
+                className="px-3 py-1 bg-secondary text-secondary-foreground rounded-full text-xs font-medium border border-transparent group-hover:border-accent/30 transition-colors"
+              >
+                {tech}
+              </span>
+            ))}
+          </div>
+        </div>
+      </CardContent>
+    </Card>
   )
 }
