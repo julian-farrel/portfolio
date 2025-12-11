@@ -45,6 +45,14 @@ const projects = [
     category: "Web3",
     href: "https://vitalisrecord.vercel.app/"
   },
+  {
+    title: "Aegis",
+    description: "Our Medical Identity, Decentralized.",
+    tech: ["Solidity", "ERC-71","TypeScript", "React"],
+    image: "",
+    category: "Web3",
+    href: "https://aegis-gold.vercel.app/"
+  },
 ]
 
 const categories = ["All", "Figma", "Web2", "Web3"]
