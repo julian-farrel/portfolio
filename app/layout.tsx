@@ -10,6 +10,9 @@ export const metadata: Metadata = {
   title: "Julian Farrel Portfolio",
   description: "Julian Farrel's Showcase",
   generator: "v0.app",
+  icons: {
+    icon: "Bitcoin.png",
+  },
 }
 
 export default function RootLayout({
