@@ -72,6 +72,25 @@ const projects = [
     category: "Figma",
   },
   {
+    title: "NFTMart",
+    description: "Decentralized Marketplace to Buy/Sell NFT.",
+    tech: ["Figma"],
+    image: "nftmart banner.png",
+    gallery: [
+      "nftmart1.png",
+      "nftmart2.png",
+      "nftmart3.png",
+      "nftmart4.png",
+      "nftmart5.png",
+      "nftmart6.png",
+      "nftmart7.png",
+      "nftmart8.png",
+      "nftmart9.png",
+      "nftmart10.png"
+    ],
+    category: "Figma",
+  },
+  {
     title: "Arah",
     description: "Trade tokenized perpetuals of the world's most popular stocks, amplified with up to 100x power.",
     tech: ["Next.js", "TypeScript", "React"],
