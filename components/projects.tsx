@@ -41,7 +41,7 @@ const projects = [
     title: "Vitalis",
     description: "Our Medical Identity, Decentralized.",
     tech: ["Solidity", "TypeScript", "React"],
-    image: "",
+    image: "vitalis banner.png",
     category: "Web3",
     href: "https://vitalisrecord.vercel.app/"
   },
@@ -49,7 +49,7 @@ const projects = [
     title: "Aegis",
     description: "Verify Gold Instantly.",
     tech: ["Solidity", "ERC-721","TypeScript", "React"],
-    image: "",
+    image: "aegis banner.png",
     category: "Web3",
     href: "https://aegis-gold.vercel.app/"
   },
