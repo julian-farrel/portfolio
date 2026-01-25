@@ -122,6 +122,14 @@ const projects = [
     category: "Web3",
     href: "https://aegis-gold.vercel.app/"
   },
+  {
+    title: "blockrides",
+    description: "Ride Sharing but Decentralized.",
+    tech: ["Solidity", "TypeScript", "React"],
+    image: "/blockrides banner.png",
+    category: "Web3",
+    href: "https://blockrides.vercel.app/"
+  },
 ]
 
 const categories = ["All", "Figma", "Web2", "Web3"]

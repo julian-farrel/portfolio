@@ -30,7 +30,7 @@ export function Hero() {
               View My Work
             </button>
             <a
-              href="https://drive.google.com/file/d/1fksnmYc_ou5pMN8hdZJEoJ8_4CTTwaSR/view?usp=sharing"
+              href="https://drive.google.com/file/d/1cAQctiFzGL_Fy_V6V20XRykJZt3q5eXl/view?usp=sharing"
               target="_blank"
               rel="noopener noreferrer"
               className="border border-gray-600 hover:border-accent text-white px-8 py-3 rounded-lg font-medium transition-colors inline-block"
