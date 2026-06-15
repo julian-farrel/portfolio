@@ -222,8 +222,7 @@ export function Projects() {
                             
                             <DialogContent 
                               showCloseButton={false} 
-                              // FIX: Added '!' (important) to these classes to override shadcn defaults strictly
-                              className="fixed !left-0 !top-0 !w-screen !h-screen !max-w-none !m-0 !p-0 !border-none bg-transparent !shadow-none !outline-none !translate-x-0 !translate-y-0 flex items-center justify-center"
+                              className="fixed !left-0 !top-0 !w-screen !h-screen !max-w-none !m-0 !p-0 !border-none bg-black/80 backdrop-blur-sm !shadow-none !outline-none !translate-x-0 !translate-y-0 flex items-center justify-center"
                             >
                               <DialogHeader className="sr-only">
                                 <DialogTitle>{project.title} Gallery</DialogTitle>
@@ -315,7 +314,8 @@ function ProjectCard({ project, index, setHoveredProject }: { project: any, inde
   return (
     <Card
       className={cn(
-        "group relative overflow-hidden transition-all duration-300 h-full border-border bg-card",
+        "group relative overflow-hidden transition-all duration-300 h-full",
+        "bg-white/5 backdrop-blur-md border-border/50",
         "hover:border-accent hover:shadow-[0_0_30px_-5px_var(--color-accent)]",
         "hover:-translate-y-1"
       )}

@@ -12,10 +12,10 @@ export function BlockchainStats() {
   })
 
   const finalStats = {
-    smartContracts: 0,
-    totalValueLocked: 0,
-    transactionsProcessed: 0,
-    gasOptimized: 0,
+    smartContracts: 12,
+    totalValueLocked: 2.4,
+    transactionsProcessed: 8300,
+    gasOptimized: 38,
   }
 
   useEffect(() => {
