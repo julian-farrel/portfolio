@@ -9,7 +9,7 @@ export function Hero() {
       {/* Ferrofluid fills the full hero background */}
       <div className="absolute inset-0 w-full h-full">
         <Ferrofluid
-          colors={['#5227FF', '#FF9FFC', '#B19EEF']}
+          colors={['#6d52db', '#865899', '#5f36e4']}
           speed={0.4}
           scale={1.4}
           turbulence={1.2}
