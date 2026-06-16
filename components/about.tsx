@@ -9,10 +9,6 @@ const skillCategories = [
     label: "Web3 & Smart Contracts",
     skills: ["Solidity", "DeFi"],
   },
-  {
-    label: "Enterprise & Database",
-    skills: ["SAP Business One", "SQL"],
-  },
 ]
 
 export function About() {
@@ -24,17 +20,11 @@ export function About() {
             <h2 className="text-3xl md:text-4xl font-bold mb-6">About Me</h2>
             <div className="space-y-4 text-muted-foreground leading-relaxed">
               <p>
-                I am an Information Systems undergraduate with a minor in Blockchain Technology — operating at the
-                intersection of functional enterprise consulting, full-stack development, and decentralized architecture.
+                Information Systems student and Blockchain developer focused on the convergence of AI, Finance, and Web3.
               </p>
               <p>
-                My background in SAP Business One and enterprise systems gives me a grounded understanding of how
-                organizations operate at scale, which I channel into building smarter, more transparent decentralized
-                solutions — from on-chain medical records with Vitalis to tokenized ride-sharing with Block Rides.
-              </p>
-              <p>
-                I don't just build for the blockchain — I build systems that bridge the legacy enterprise world with
-                the trustless infrastructure of Web3 and the intelligence of modern AI.
+                I build decentralized systems that transform how industries handle data and value.
+                My goal is to architect smarter, more transparent financial and enterprise solutions by bridging modern decentralized infrastructure with the predictive power of Artificial Intelligence.
               </p>
             </div>
           </div>

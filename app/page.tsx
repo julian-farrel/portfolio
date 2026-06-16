@@ -3,7 +3,6 @@ import { Hero } from "@/components/hero"
 import { About } from "@/components/about"
 import { Projects } from "@/components/projects"
 import { AIProjects } from "@/components/ai-projects"
-import { BlockchainStats } from "@/components/blockchain-stats"
 import { Contact } from "@/components/contact"
 import { Footer } from "@/components/footer"
 
@@ -13,7 +12,6 @@ export default function Home() {
       <Header />
       <Hero />
       <About />
-      <BlockchainStats />
       <Projects />
       <AIProjects />
       <Contact />
