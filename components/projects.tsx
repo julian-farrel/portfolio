@@ -17,10 +17,10 @@ import {
   DialogHeader,
   DialogTitle,
   DialogTrigger,
-  DialogClose, 
+  DialogClose,
 } from "@/components/ui/dialog"
 import { cn } from "@/lib/utils"
-import { X } from "lucide-react"
+import { X, Hammer } from "lucide-react"
 
 const projects = [
   {
@@ -99,14 +99,6 @@ const projects = [
     href: "https://arah.vercel.app/"
   },
   {
-    title: "Specula",
-    description: "Blockchain Based Prediction Market. Predict, Forecast Decentralized & Transparant",
-    tech: ["Next.js", "TypeScript", "React"],
-    image: "",
-    category: "Web2",
-    href: "https://speculamarket.vercel.app/"
-  },
-  {
     title: "Vitalis",
     description: "Our Medical Identity, Decentralized.",
     tech: ["Solidity", "TypeScript", "React"],
@@ -129,6 +121,25 @@ const projects = [
     image: "/blockrides banner.png",
     category: "Web3",
     href: "https://blockrides.vercel.app/"
+  },
+]
+
+const inProgressProjects = [
+  {
+    title: "Specula",
+    description: "Blockchain Based Prediction Market. Predict, Forecast Decentralized & Transparant",
+    tech: ["Next.js", "TypeScript", "React"],
+    image: "",
+    category: "Web2",
+    href: "https://speculamarket.vercel.app/",
+  },
+  {
+    title: "Nailuj Terminal",
+    description: "Crypto Focuses Quant Trading & News Terminal",
+    tech: ["Next.js", "TypeScript", "React"],
+    image: "",
+    category: "Web2",
+    href: "https://nailuj.vercel.app/",
   },
 ]
 
@@ -219,9 +230,9 @@ export function Projects() {
                                 <ProjectCard project={project} index={index} setHoveredProject={setHoveredProject} />
                               </div>
                             </DialogTrigger>
-                            
-                            <DialogContent 
-                              showCloseButton={false} 
+
+                            <DialogContent
+                              showCloseButton={false}
                               className="fixed !left-0 !top-0 !w-screen !h-screen !max-w-none !m-0 !p-0 !border-none bg-black/80 backdrop-blur-sm !shadow-none !outline-none !translate-x-0 !translate-y-0 flex items-center justify-center"
                             >
                               <DialogHeader className="sr-only">
@@ -251,13 +262,13 @@ export function Projects() {
                                       </CarouselItem>
                                     ))}
                                   </CarouselContent>
-                                  
+
                                   {/* NAV BUTTONS: Fixed to screen edges, size 12 */}
-                                  <CarouselPrevious 
-                                    className="fixed left-4 top-1/2 -translate-y-1/2 h-12 w-12 border-white/10 bg-black/50 hover:bg-white/20 text-white/80 hover:text-white backdrop-blur-md z-[60] border-none" 
+                                  <CarouselPrevious
+                                    className="fixed left-4 top-1/2 -translate-y-1/2 h-12 w-12 border-white/10 bg-black/50 hover:bg-white/20 text-white/80 hover:text-white backdrop-blur-md z-[60] border-none"
                                   />
-                                  <CarouselNext 
-                                    className="fixed right-4 top-1/2 -translate-y-1/2 h-12 w-12 border-white/10 bg-black/50 hover:bg-white/20 text-white/80 hover:text-white backdrop-blur-md z-[60] border-none" 
+                                  <CarouselNext
+                                    className="fixed right-4 top-1/2 -translate-y-1/2 h-12 w-12 border-white/10 bg-black/50 hover:bg-white/20 text-white/80 hover:text-white backdrop-blur-md z-[60] border-none"
                                   />
                                 </Carousel>
                               </div>
@@ -305,6 +316,34 @@ export function Projects() {
             </div>
           )}
         </div>
+
+        {/* ── In Progress Section ── */}
+        <div className="mt-20">
+          <div className="flex items-center gap-3 mb-8">
+            <div className="flex items-center gap-2">
+              <Hammer className="w-5 h-5 text-amber-400" />
+              <h3 className="text-xl md:text-2xl font-bold">In Progress</h3>
+            </div>
+            <div className="flex-1 h-px bg-gradient-to-r from-amber-400/40 to-transparent" />
+            <span className="text-xs font-medium text-amber-400/80 uppercase tracking-widest border border-amber-400/30 bg-amber-400/10 px-3 py-1 rounded-full">
+              Work in Progress
+            </span>
+          </div>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            {inProgressProjects.map((project, index) => (
+              <a
+                key={project.title}
+                href={project.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="block"
+              >
+                <InProgressCard project={project} />
+              </a>
+            ))}
+          </div>
+        </div>
       </div>
     </section>
   )
@@ -345,6 +384,69 @@ function ProjectCard({ project, index, setHoveredProject }: { project: any, inde
               <span
                 key={tech}
                 className="px-3 py-1 bg-secondary text-secondary-foreground rounded-full text-xs font-medium border border-transparent group-hover:border-accent/30 transition-colors"
+              >
+                {tech}
+              </span>
+            ))}
+          </div>
+        </div>
+      </CardContent>
+    </Card>
+  )
+}
+
+function InProgressCard({ project }: { project: any }) {
+  return (
+    <Card
+      className={cn(
+        "group relative overflow-hidden transition-all duration-300 h-full",
+        "bg-white/5 backdrop-blur-md",
+        "border border-amber-400/20",
+        "hover:border-amber-400/60 hover:shadow-[0_0_30px_-5px_rgba(251,191,36,0.35)]",
+        "hover:-translate-y-1"
+      )}
+    >
+      {/* Pulsing "building" indicator */}
+      <div className="absolute top-3 right-3 z-30 flex items-center gap-1.5 bg-black/60 backdrop-blur-sm border border-amber-400/30 rounded-full px-2.5 py-1">
+        <span className="relative flex h-2 w-2">
+          <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-amber-400 opacity-75" />
+          <span className="relative inline-flex rounded-full h-2 w-2 bg-amber-400" />
+        </span>
+        <span className="text-[10px] font-semibold text-amber-400 uppercase tracking-wider">Building</span>
+      </div>
+
+      <CardContent className="p-0 flex flex-col h-full">
+        <div className="aspect-video overflow-hidden relative bg-gradient-to-br from-amber-400/5 via-transparent to-amber-600/5">
+          {project.image ? (
+            <img
+              src={project.image}
+              alt={project.title}
+              className="w-full h-full object-cover opacity-70 transition-all duration-500 group-hover:opacity-90 group-hover:brightness-110"
+            />
+          ) : (
+            <div className="w-full h-full flex items-center justify-center">
+              <Hammer className="w-12 h-12 text-amber-400/30 group-hover:text-amber-400/50 transition-colors duration-300" />
+            </div>
+          )}
+          {/* Amber tint overlay */}
+          <div className="absolute inset-0 bg-gradient-to-t from-amber-950/20 to-transparent" />
+        </div>
+
+        <div className="p-5 flex flex-col flex-grow relative z-20 bg-card border-t border-amber-400/15">
+          <div className="flex justify-between items-start mb-2">
+            <h3 className="text-xl font-bold text-foreground group-hover:text-amber-400 transition-colors duration-300">
+              {project.title}
+            </h3>
+            <span className="text-[10px] uppercase tracking-wider font-semibold bg-amber-400/10 px-2 py-1 rounded text-amber-400/80 border border-amber-400/20">
+              {project.category}
+            </span>
+          </div>
+          <p className="text-muted-foreground text-sm mb-4 flex-grow">{project.description}</p>
+          <div className="flex flex-wrap gap-2 mt-auto">
+            {project.tech.map((tech: string) => (
+              <span
+                key={tech}
+                className="px-2.5 py-0.5 bg-secondary text-secondary-foreground rounded-full text-xs font-medium border border-transparent group-hover:border-amber-400/20 transition-colors"
               >
                 {tech}
               </span>
